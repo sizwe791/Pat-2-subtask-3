@@ -16,4 +16,4 @@ endl;
          for (j = 1; j <= NUM_READINGS; j++)
             cout << "Enter reading " <<j<<
 "Value: ";
-          cin >>readingValue
+          cin >>readingValue;

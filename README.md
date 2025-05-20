@@ -1,41 +1,40 @@
-#include #include using namespace std;
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
 const int NUM_EXPERIMENTS = 3;
 const int NUM_READINGS = 3;
 
 int main() {
-    int i, j; // corected types to int 
     double readingValue, total, average;
 
-    for (i = 1 <=Num_EXPERIMENTS; i++) {
-         total = 0; 
-         cout << "\nEXPERIMENT " << i <<
-endl;
-         cout << "===================\n";
+    for (int i = 1; i <= NUM_EXPERIMENTS; i++) {
+        total = 0; 
+        cout << "\nEXPERIMENT " << i << endl;
+        cout << "===================\n";
 
-         for (j = 1; j <= NUM_READINGS; j++)
-            cout << "Enter reading " <<j<<
-"Value: ";
-          cin >>readingValue;
-          total += readingValue; // fixed wrong operation 
-          }
-          average = total / NUM_rEADINGS; // fIXED AVERAGE CALCULATION 
+        for (int j = 1; j <= NUM_READINGS; j++) {
+            cout << "Enter reading " << j << " value: ";
+            cin >> readingValue;
+            total += readingValue;
+        }
 
-           // InCORPORATE EVALUATION LOGIC DIRECTLY 
-           cout << fixed << setprecision(2); // set decimal formating 
-           if (average < 100) {
-                cout << "Exipereiment" <<i<< "
-            average: " << average 
-                             << " is Within acceptable range \n";
-           } else if (average >= 100 && average <=300){
-             cout << "Exiperiment " <<i<< "
-             average: "<< average
-                               << " is within acceptable range\n"
-            }else {
-            cout <<" Exiperement "<<i<<"
-            average: "<< average 
-                             << " is Above acceptable range \n";
-            }
-            }
-            return 0;
-            }
+        average = total / NUM_READINGS;
+
+        cout << fixed << setprecision(2); // Set decimal formatting
+
+        if (average < 100) {
+            cout << "Experiment " << i << " average: " << average 
+                 << " is **within acceptable range**\n";
+        } else if (average >= 100 && average <= 300) {
+            cout << "Experiment " << i << " average: " << average 
+                 << " is **within acceptable range**\n";
+        } else {
+            cout << "Experiment " << i << " average: " << average 
+                 << " is **above acceptable range**\n";
+        }
+    }
+
+    return 0;
+}
+
